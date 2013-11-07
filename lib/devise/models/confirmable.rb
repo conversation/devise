@@ -255,11 +255,11 @@ module Devise
         end
 
         def reconfirmation_required?
-          self.class.reconfirmable && @reconfirmation_required && !self.email.blank?
+          self.class.reconfirmable && @reconfirmation_required
         end
 
         def send_confirmation_notification?
-          confirmation_required? && !@skip_confirmation_notification && !self.email.blank?
+          confirmation_required? && !@skip_confirmation_notification
         end
 
         def after_confirmation
